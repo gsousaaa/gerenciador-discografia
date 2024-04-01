@@ -55,7 +55,7 @@ export const ModalNewAlbum = ({ data, setData, setDataEdit, dataEdit, isOpen, on
 
             const erro = err.response.data.error
             toast({
-                title: "Erro ao excluir a música",
+                title: "Erro ao adicionar album",
                 description: erro,
                 status: "error",
                 duration: 5000,
