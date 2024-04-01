@@ -12,7 +12,7 @@ https://www.youtube.com/watch?v=wBd87tpJYvk
 ### Clonar o Repositório
 Antes de começar, você precisa clonar o repositório do projeto para sua máquina local. Execute o seguinte comando:
 ```bash
-  git clone https://github.com/gsousaaa/teste-supliu-frontend.git
+  git clone https://github.com/gsousaaa/teste-supliu.git
 ```
     
 ### Front-end
