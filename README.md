@@ -3,7 +3,43 @@
 # Documentação do Projeto: Gerenciador de Discografia Tião Carreiro e Pardinho 🤠
 
 ## Visão Geral
-O Gerenciador de Discografia Tião Carreiro e Pardinho é uma aplicação Fullstack desenvolvida para permitir aos usuários gerenciar a discografia da famosa dupla sertaneja Tião Carreiro e Pardinho. O projeto consiste em um back-end construído com o framework Laravel para fornecer uma API RESTful e um front-end desenvolvido em React para oferecer uma interface de usuário amigável e responsiva.
+O Gerenciador de Discografia Tião Carreiro e Pardinho é uma aplicação Fullstack desenvolvida para permitir aos usuários gerenciar a discografia da famosa dupla sertaneja Tião Carreiro e Pardinho. O projeto consiste em um back-end construído com o framework Laravel para fornecer uma API RESTful, MySQL como banco de dados e um front-end desenvolvido em React para oferecer uma interface de usuário amigável e responsiva.
+
+## Como Iniciar o Projeto
+
+### Clonar o Repositório
+Antes de começar, você precisa clonar o repositório do projeto para sua máquina local. Execute o seguinte comando:
+```bash
+  git clone https://github.com/gsousaaa/teste-supliu-frontend.git
+```
+    
+    
+### Front-end
+Para iniciar o projeto do front-end, siga estas etapas:
+
+1. **Instalar as Dependências:**
+    ```bash
+    cd frontend
+    npm install
+    ```
+
+2. **Rodar o Front-end:**
+    ```bash
+    cd frontend
+    npm run dev
+    ```
+
+### Back-end
+Para iniciar o projeto do back-end, siga estas etapas:
+
+1. **Rodar o Back-end:**
+    ```bash
+    cd backend
+    php artisan serve
+    ```
+
+Isso permitirá que você inicie tanto o front-end quanto o back-end do projeto, permitindo que você comece a desenvolver e interagir com a aplicação.
+
 
 ## Funcionalidades
 A aplicação oferece as seguintes funcionalidades aos usuários:
