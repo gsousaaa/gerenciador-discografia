@@ -46,7 +46,7 @@ export const ModalEditAlbum = ({ data, setData, selectedAlbumId, isOpen, onClose
 
             toast({
                 title: "Album editado",
-                description: "O album foi editada com sucesso.",
+                description: "O album foi editado com sucesso.",
                 status: "success",
                 duration: 3000,
                 isClosable: true,

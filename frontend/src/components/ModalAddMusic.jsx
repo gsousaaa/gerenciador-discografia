@@ -79,7 +79,7 @@ export const ModalNewMusic = ({ isOpen, onClose, selectedAlbumId, data, setData 
 
             const erro = err.response.data.error
             toast({
-                title: "Erro ao excluir a música",
+                title: "Erro ao adicionar a música",
                 description: erro,
                 status: "error",
                 duration: 5000,
