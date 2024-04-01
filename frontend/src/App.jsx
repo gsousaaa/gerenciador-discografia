@@ -129,8 +129,8 @@ function App() {
 
 
         </Flex>
-        <Flex overflowY="auto" width="100vh" height="100vh" >
-          <Table mt='2' spacing='0' border="2px" borderColor="gray.200">
+        <Box overflowY="auto" width="100vh" height="100%" >
+          <Table mt='6'  border="2px" borderColor="gray.200">
             <Thead>
               <Tr>
                 <Th maxW={isMobile ? 5 : 100} fontSize="20px">
@@ -177,7 +177,7 @@ function App() {
               })}
             </Tbody>
           </Table>
-        </Flex>
+        </Box>
         {isAlbumModalOpen && (
           <ModalNewAlbum
             isOpen={isAlbumModalOpen}
