@@ -41,7 +41,7 @@ export const MusicModal = ({ isOpen, onClose, selectedAlbumId }) => {
         try {
             const response = await axios.get(`${URL}/album/${selectedAlbumId}`);
             setAlbum(response.data);
-            setFilteredMusics(response.data.musics); // Define as músicas do álbum
+            setFilteredMusics(response.data.musics);
         } catch (err) {
             console.error('Erro em buscar album:', err);
             const erro = err.response.data.error
@@ -85,12 +85,16 @@ export const MusicModal = ({ isOpen, onClose, selectedAlbumId }) => {
 
             await axios.delete(`${URL}/album/${selectedAlbumId}/music/${musicId}`)
 
+            const updatedAlbum = { ...album };
+            updatedAlbum.musics = updatedAlbum.musics.filter((music) => music.id !== musicId);
+            setAlbum(updatedAlbum);
+
             toast({
                 title: "Música excluída",
                 description: "A música foi excluída com sucesso.",
                 status: "success",
                 duration: 3000,
-                isClosable: true,
+                isClosable: true
             });
         } catch (err) {
             console.error('Erro ao excluir a música', err)
@@ -117,6 +121,7 @@ export const MusicModal = ({ isOpen, onClose, selectedAlbumId }) => {
 
             fetchAlbum()
             onEditMusicModalClose()
+
             toast({
                 title: "Música editada",
                 description: "A música foi editada com sucesso.",
@@ -145,7 +150,7 @@ export const MusicModal = ({ isOpen, onClose, selectedAlbumId }) => {
                     <ModalHeader>{album ? album.album_name : ''}</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody>
-                        <MusicSearchBar searchData={handleSearch} resetFilter={handleReset} />
+                        <MusicSearchBar searchData={handleSearch} resetFilter={handleReset}/>
                         <Table mt="4">
                             <Thead>
                                 <Tr>
