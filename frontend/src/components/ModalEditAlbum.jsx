@@ -16,6 +16,7 @@ import {
 import { useState } from "react";
 import axios from 'axios';
 import { useToast } from "@chakra-ui/toast";
+import { URL } from "../constants/url";
 
 export const ModalEditAlbum = ({ data, setData, selectedAlbumId, isOpen, onClose, fetchAlbums }) => {
     const [newAlbumName, setNewAlbumName] = useState("");
@@ -26,7 +27,7 @@ export const ModalEditAlbum = ({ data, setData, selectedAlbumId, isOpen, onClose
 
         try {
 
-            const response = await axios.put(`http://localhost:8000/album/${selectedAlbumId}`, { album_name: newAlbumName }, {
+            const response = await axios.put(`${URL}/album/${selectedAlbumId}`, { album_name: newAlbumName }, {
                 headers: {
                     'Content-Type': 'application/json'
                 }

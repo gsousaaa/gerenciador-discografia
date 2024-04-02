@@ -26,8 +26,7 @@ import { useState, useEffect, } from "react";
 import { MusicSearchBar } from "./SearchMusicBar";
 import axios from "axios";
 import { useToast } from "@chakra-ui/toast";
-
-
+import { URL } from "../constants/url";
 
 export const MusicModal = ({ isOpen, onClose, selectedAlbumId }) => {
     const [searchTerm, setSearchTerm] = useState("");
@@ -40,7 +39,7 @@ export const MusicModal = ({ isOpen, onClose, selectedAlbumId }) => {
 
     const fetchAlbum = async () => {
         try {
-            const response = await axios.get(`http://localhost:8000/album/${selectedAlbumId}`);
+            const response = await axios.get(`${URL}/album/${selectedAlbumId}`);
             setAlbum(response.data);
             setFilteredMusics(response.data.musics); // Define as músicas do álbum
         } catch (err) {
@@ -84,7 +83,7 @@ export const MusicModal = ({ isOpen, onClose, selectedAlbumId }) => {
             const newArray = filteredMusics.filter((music) => music.id !== musicId)
             setFilteredMusics(newArray)
 
-            await axios.delete(`http://localhost:8000/album/${selectedAlbumId}/music/${musicId}`)
+            await axios.delete(`${URL}/album/${selectedAlbumId}/music/${musicId}`)
 
             toast({
                 title: "Música excluída",
@@ -110,7 +109,7 @@ export const MusicModal = ({ isOpen, onClose, selectedAlbumId }) => {
 
     const handleSaveEdit = async () => {
         try {
-            const response = await axios.put(`http://localhost:8000/album/${selectedAlbumId}/music/${selectedMusicId}`, { music_name: newMusicName }, {
+            const response = await axios.put(`${URL}/album/${selectedAlbumId}/music/${selectedMusicId}`, { music_name: newMusicName }, {
                 headers: {
                     'Content-Type': 'application/json'
                 },

@@ -21,6 +21,7 @@ import { ModalNewMusic } from './components/ModalAddMusic';
 import { MusicModal } from './components/ModalViewMusics';
 import axios from 'axios';
 import { useToast } from "@chakra-ui/toast";
+import { URL } from './constants/url';
 
 
 function App() {
@@ -40,7 +41,7 @@ function App() {
 
   const fetchAlbums = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/albums', {
+      const response = await axios.get(`${URL}/albums`, {
         headers: {
           'Content-Type': 'application/json'
         }
@@ -81,7 +82,7 @@ function App() {
       setFilteredData(newArray)
       localStorage.setItem("albums", JSON.stringify(newArray));
 
-      await axios.delete(`http://localhost:8000/album/${albumId}`)
+      await axios.delete(`${URL}/album/${albumId}`)
 
       toast({
         title: "Album excluído",

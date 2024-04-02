@@ -81,7 +81,7 @@ A API RESTful oferece as seguintes rotas para interagir com os recursos de álbu
 
 - `GET /albums`: Retorna todos os álbuns cadastrados, incluindo suas respectivas faixas.
 - `GET /album/{album_id}`: Retorna detalhes de um álbum específico com base no ID fornecido, juntamente com suas faixas correspondentes.
-- `POST /createalbum`: Cria um novo álbum.
+- `POST /album`: Cria um novo álbum.
 - `PUT /album/{album_id}`: Atualiza os detalhes de um álbum existente.
 - `DELETE /album/{album_id}`: Exclui um álbum existente.
 - `POST /album/{album_id}/music`: Adiciona uma nova faixa a um álbum específico.

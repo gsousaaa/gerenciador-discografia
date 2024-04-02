@@ -16,6 +16,7 @@ import {
 import { useState } from "react";
 import axios from 'axios';
 import { useToast } from "@chakra-ui/toast";
+import { URL } from "../constants/url";
 
 export const ModalNewMusic = ({ isOpen, onClose, selectedAlbumId, data, setData }) => {
     const [music_name, setMusicName] = useState('');
@@ -44,7 +45,7 @@ export const ModalNewMusic = ({ isOpen, onClose, selectedAlbumId, data, setData 
                 return;
             }
 
-            const response = await axios.post(`http://localhost:8000/album/${selectedAlbumId}/music`, { music_name }, {
+            const response = await axios.post(`${URL}/album/${selectedAlbumId}/music`, { music_name }, {
                 headers: {
                     'Content-Type': 'application/json'
                 }

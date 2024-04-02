@@ -16,6 +16,7 @@ import {
 import { useState } from "react";
 import axios from 'axios';
 import { useToast } from "@chakra-ui/toast";
+import { URL } from "../constants/url";
 
 export const ModalNewAlbum = ({ data, setData, setDataEdit, dataEdit, isOpen, onClose, fetchAlbums }) => {
     const [album_name, setAlbumName] = useState("");
@@ -32,7 +33,7 @@ export const ModalNewAlbum = ({ data, setData, setDataEdit, dataEdit, isOpen, on
                 return;
             }
 
-            const response = await axios.post('http://localhost:8000/createalbum', { album_name }, {
+            const response = await axios.post(`${URL}/album`, { album_name }, {
                 headers: {
                     'Content-Type': 'application/json'
                 }
